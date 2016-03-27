@@ -16,6 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".CentralActivity" />
+        <activity android:name=".ActionActivity" />
+        <activity android:name=".gesture.GestureActivity" />
     </application>
 
 </manifest>

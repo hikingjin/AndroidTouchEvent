@@ -16,6 +16,7 @@
         android:orientation="vertical">
 
         <com.wangjin.touch.HangZhou
+            android:id="@+id/hangzhou"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#732473"
