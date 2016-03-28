@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
 import android.view.View;
 
 /**
@@ -27,7 +28,7 @@ public class GestureView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        boolean oa = true;
+        boolean oa = true;//true 否则获取不到事件,因为有些事件是down move up综合判定之后的结果
         mGesture.onTouchEvent(event);
         return oa;
     }
@@ -55,14 +56,14 @@ public class GestureView extends View {
         public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
             Log.e("UUU", "onScroll " + MotionEvent.actionToString(e1.getAction()) + "  " + MotionEvent.actionToString(e2.getAction()));
 
-
+            Log.e("UUU", "distanceX" + distanceX + "     distanceY" + distanceY);
             return super.onScroll(e1, e2, distanceX, distanceY);
         }
 
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
             Log.e("UUU", "onFling " + MotionEvent.actionToString(e1.getAction()) + "  " + MotionEvent.actionToString(e2.getAction()));
-
+            Log.e("UUU", "down的点" + e1.getX() + "," + e1.getY() + "     " + e2.getX() + "," + e2.getY());
             return super.onFling(e1, e2, velocityX, velocityY);
         }
 
